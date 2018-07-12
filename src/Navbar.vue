@@ -1,9 +1,10 @@
 <template>
-  <nav>
+  <nav class="main-nav">
+    <h2>Menu</h2>
     <ul>
-      <li><a href=""></a>Home</li>
-      <li><a href=""></a>About</li>
-      <li><a href=""></a>Contact</li>
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -19,15 +20,15 @@ export default {
 </script>
 
 <style>
-nav {
+nav.main-nav {
   text-align: center;
 }
 
-nav ul {
+nav.main-nav ul {
   padding: 0;
 }
 
-nav li {
+nav.main-nav li {
   display: inline-block;
   list-style-type: none;
   margin: 0;
