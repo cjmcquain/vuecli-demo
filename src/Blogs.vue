@@ -1,6 +1,7 @@
 <template>
   <div class="blogs">
     <h2>{{ blogTitle }}</h2>
+    <input type="text" v-model="searchTerm">
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
       <p>{{ post.body | snippet }}</p>
@@ -16,12 +17,20 @@ export default {
   data() {
     return {
       blogTitle: "Blog site",
-      posts: []
+      posts: [],
+      searchTerm: ""
     };
   },
   methods: {
     changeTitle() {
       this.blogTitle = "Amazing Blog Site";
+    }
+  },
+  computed: {
+    filteredPosts() {
+      return this.posts.filter(post => {
+        return post.title.match(this.searchTerm);
+      });
     }
   },
   beforeCreate() {
